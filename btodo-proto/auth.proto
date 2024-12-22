@@ -19,7 +19,7 @@ message SignInRequest {
 message SignInResponse {
     string accessToken = 1;
     string refreshToken = 2;
-    int expireDate = 3;
+    int32 expireDate = 3;
 }
 
 message SignUpRequest {
@@ -30,7 +30,7 @@ message SignUpRequest {
 message SignUpResponse {
     string accessToken = 1;
     string refreshToken = 2;
-    int expireDate = 3;
+    int32 expireDate = 3;
 }
 
 message SignOutRequest {}
@@ -51,7 +51,7 @@ message RefreshTokenRequest {
 message RefreshTokenResponse {
     string accessToken = 1;
     string refreshToken = 2;
-    int expireDate = 3;
+    int32 expireDate = 3;
 }
 
 message ChangePasswordRequest {
