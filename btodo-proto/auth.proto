@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+    rpc SignIn(SignInRequest) returns (SignInResponse);
+    rpc SignUp(SignUpRequest) returns (SignUpResponse);
+    rpc SignOut(SignOutRequest) returns (SignOutResponse);
+    rpc Verify(VerifyRequest)  returns (VerifyResponse);
+    rpc RefreshToken(RefreshTokenRequest)  returns (RefreshTokenResponse);
+    rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+}
+
+message SignInRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message SignInResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
+    int expireDate = 3;
+}
+
+message SignUpRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message SignUpResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
+    int expireDate = 3;
+}
+
+message SignOutRequest {}
+message SignOutResponse {}
+
+message VerifyRequest {
+    string accessToken = 1;
+}
+
+message VerifyResponse {
+    bool isValid = 1;
+}
+
+message RefreshTokenRequest {
+    string refreshToken = 1;
+}
+
+message RefreshTokenResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
+    int expireDate = 3;
+}
+
+message ChangePasswordRequest {
+    string oldPassword = 1;
+    string newPassword = 2;
+}
+
+message ChangePasswordResponse {}
