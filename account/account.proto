@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-import "../utils/time-stamp.proto";
+import "../utils/timestamp.proto";
 
-package account;
+package btodo.account;
 
 service AccountService {
     rpc FindAccount(FindAccountRequest) returns (FindAccountResponse);
@@ -18,8 +18,8 @@ message FindAccountResponse {
     int64 accountID = 1;
     string email = 2;
     bool isDeleted = 3;
-    Timestamp createdAt = 4;
-    Timestamp updatedAt = 5;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
 }
 
 message CreateAccountRequest {

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package auth;
+package btodo.auth;
 
 service AuthService {
     rpc SignIn(SignInRequest) returns (SignInResponse);
