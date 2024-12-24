@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "../utils/timestamp.proto";
+import "utils/timestamp.proto";
 
 package btodo.account;
 
