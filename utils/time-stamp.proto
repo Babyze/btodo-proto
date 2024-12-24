@@ -1,0 +1,3 @@
+message Timestamp {
+    int64 second = 1;
+}

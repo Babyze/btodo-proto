@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "../utils/time-stamp.proto";
+
+package account;
+
+service AccountService {
+    rpc FindAccount(FindAccountRequest) returns (FindAccountResponse);
+    rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse);
+}
+
+message FindAccountRequest {
+    int64 accountID = 1;
+    bool isDeleted = 2;
+}
+
+message FindAccountResponse {
+    int64 accountID = 1;
+    string email = 2;
+    bool isDeleted = 3;
+    Timestamp createdAt = 4;
+    Timestamp updatedAt = 5;
+}
+
+message CreateAccountRequest {
+    string email = 1;
+}
+
+message CreateAccountResponse {}
