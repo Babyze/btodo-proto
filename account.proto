@@ -11,15 +11,15 @@ service AccountService {
 
 message FindAccountRequest {
     int64 accountID = 1;
-    bool isDeleted = 2;
+    optional bool isDeleted = 2;
 }
 
 message FindAccountResponse {
     int64 accountID = 1;
     string email = 2;
     bool isDeleted = 3;
-    btodo.utils.Timestamp createdAt = 4;
-    btodo.utils.Timestamp updatedAt = 5;
+    optional btodo.utils.Timestamp createdAt = 4;
+    optional btodo.utils.Timestamp updatedAt = 5;
 }
 
 message CreateAccountRequest {
