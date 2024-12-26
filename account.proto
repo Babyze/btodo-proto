@@ -26,4 +26,10 @@ message CreateAccountRequest {
     string email = 1;
 }
 
-message CreateAccountResponse {}
+message CreateAccountResponse {
+    int64 accountID = 1;
+    string email = 2;
+    bool isDeleted = 3;
+    optional btodo.utils.Timestamp createdAt = 4;
+    optional btodo.utils.Timestamp updatedAt = 5;
+}
