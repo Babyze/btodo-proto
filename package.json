@@ -5,7 +5,7 @@
   "license": "MIT",
   "description": "",
   "scripts": {
-    "proto:compile": "mkdir dist && grpc_tools_node_protoc -I=./ --plugin=./node_modules/.bin./protoc-gen-ts_proto.cmd --ts_proto_out=./dist --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb ./*.proto"
+    "proto:compile": "rmdir dist && mkdir dist && grpc_tools_node_protoc -I=./ --plugin=./node_modules/.bin./protoc-gen-ts_proto.cmd --ts_proto_out=./dist --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb ./*.proto"
   },
   "devDependencies": {
     "grpc-tools": "^1.12.4",

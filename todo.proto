@@ -11,6 +11,7 @@ service TodoService {
     rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
 
     rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+    rpc GetTaskList(GetTaskListRequest) returns (GetTaskListResponse);
     rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse);
     rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse);
 }
@@ -50,17 +51,8 @@ message GetTodoResponse {
     int64 todoID = 1;
     string name = 2;
     int32 status = 3;
-    repeated Task tasks = 4;
     btodo.utils.Timestamp createdAt = 5;
     btodo.utils.Timestamp updatedAt = 6;
-}
-
-message Task {
-    int64 taskID = 1;
-    string name = 2;
-    int32 status = 3;
-    btodo.utils.Timestamp createdAt = 4;
-    btodo.utils.Timestamp updatedAt = 5;
 }
 
 message DeleteTodoRequest {
@@ -81,6 +73,21 @@ message CreateTaskRequest {
     string name = 3;
 }
 message CreateTaskResponse {
+    int64 taskID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message GetTaskListRequest {
+    int64 todoID = 1;
+}
+message GetTaskListResponse {
+    repeated Task task = 1;
+}
+
+message Task {
     int64 taskID = 1;
     string name = 2;
     int32 status = 3;
