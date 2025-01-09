@@ -77,7 +77,8 @@ message DeleteTodoResponse {
 
 message CreateTaskRequest {
     int64 todoID = 1;
-    string name = 2;
+    int64 accountID = 2;
+    string name = 3;
 }
 message CreateTaskResponse {
     int64 taskID = 1;
@@ -89,6 +90,7 @@ message CreateTaskResponse {
 
 message UpdateTaskRequest {
     int64 todoID = 1;
+    int64 accountID = 2;
     int64 taskID = 2;
     int32 status = 3;
 }
@@ -102,7 +104,8 @@ message UpdateTaskResponse {
 
 message DeleteTaskRequest {
     int64 todoID = 1;
-    int64 taskID = 2;
+    int64 accountID = 2;
+    int64 taskID = 3;
 }
 message DeleteTaskResponse {
     int64 taskID = 1;
