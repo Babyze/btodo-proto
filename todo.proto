@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+import "utils.proto";
+
+package btodo.todo;
+
+service TodoService {
+    rpc GetTodoList(GetTodoListRequest) returns (GetTodoListResponse);
+    rpc CreateTodo(CreateTodoRequest) returns (CreateTodoResponse);
+    rpc GetTodo(GetTodoRequest) returns (GetTodoResponse);
+    rpc DeleteTodo(DeleteTodoRequest) returns (DeleteTodoResponse);
+
+    rpc CreateTask(CreateTaskRequest) returns (CreateTaskResponse);
+    rpc UpdateTask(UpdateTaskRequest) returns (UpdateTaskResponse);
+    rpc DeleteTask(DeleteTaskRequest) returns (DeleteTaskResponse);
+}
+
+message GetTodoListRequest {
+    int64 accountID = 1;
+}
+message GetTodoListResponse {
+    repeated Todo todo = 1;
+}
+
+message Todo {
+    int64 todoID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message CreateTodoRequest {
+    int64 accountID = 1;
+    string name = 2;
+}
+message CreateTodoResponse {
+    int64 todoID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message GetTodoRequest {
+    int64 accountID = 1;
+    int64 todoID = 2;
+}
+message GetTodoResponse {
+    int64 todoID = 1;
+    string name = 2;
+    int32 status = 3;
+    repeated Task tasks = 4;
+    btodo.utils.Timestamp createdAt = 5;
+    btodo.utils.Timestamp updatedAt = 6;
+}
+
+message Task {
+    int64 taskID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message DeleteTodoRequest {
+    int64 accountID = 1;
+    int64 todoID = 2;
+}
+message DeleteTodoResponse {
+    int64 todoID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message CreateTaskRequest {
+    string name = 1;
+}
+message CreateTaskResponse {
+    int64 taskID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message UpdateTaskRequest {
+    int64 accountID = 1;
+    int64 taskID = 2;
+    int32 status = 3;
+}
+message UpdateTaskResponse {
+    int64 taskID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
+
+message DeleteTaskRequest {
+    int64 accountID = 1;
+    int64 taskID = 2;
+}
+message DeleteTaskResponse {
+    int64 taskID = 1;
+    string name = 2;
+    int32 status = 3;
+    btodo.utils.Timestamp createdAt = 4;
+    btodo.utils.Timestamp updatedAt = 5;
+}
