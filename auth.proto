@@ -8,7 +8,6 @@ service AuthService {
     rpc SignOut(SignOutRequest) returns (SignOutResponse);
     rpc Verify(VerifyRequest)  returns (VerifyResponse);
     rpc RefreshToken(RefreshTokenRequest)  returns (RefreshTokenResponse);
-    rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
 }
 
 message SignInRequest {
@@ -42,6 +41,7 @@ message VerifyRequest {
 
 message VerifyResponse {
     bool isValid = 1;
+    optional int64 accountID = 2;
 }
 
 message RefreshTokenRequest {
@@ -53,10 +53,3 @@ message RefreshTokenResponse {
     string refreshToken = 2;
     int32 expireDate = 3;
 }
-
-message ChangePasswordRequest {
-    string oldPassword = 1;
-    string newPassword = 2;
-}
-
-message ChangePasswordResponse {}
