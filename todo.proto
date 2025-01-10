@@ -25,7 +25,7 @@ message GetTodoListResponse {
 
 message Todo {
     int64 todoID = 1;
-    string name = 2;
+    string todoName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
@@ -89,7 +89,7 @@ message GetTaskListResponse {
 
 message Task {
     int64 taskID = 1;
-    string name = 2;
+    string taskName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
