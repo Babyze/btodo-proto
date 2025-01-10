@@ -82,9 +82,10 @@ message CreateTaskResponse {
 
 message GetTaskListRequest {
     int64 todoID = 1;
+    int64 accountID = 2;
 }
 message GetTaskListResponse {
-    repeated Task task = 1;
+    repeated Task tasks = 1;
 }
 
 message Task {
