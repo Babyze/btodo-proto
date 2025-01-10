@@ -37,7 +37,7 @@ message CreateTodoRequest {
 }
 message CreateTodoResponse {
     int64 todoID = 1;
-    string name = 2;
+    string todoName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
@@ -49,7 +49,7 @@ message GetTodoRequest {
 }
 message GetTodoResponse {
     int64 todoID = 1;
-    string name = 2;
+    string todoName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 5;
     btodo.utils.Timestamp updatedAt = 6;
@@ -61,7 +61,7 @@ message DeleteTodoRequest {
 }
 message DeleteTodoResponse {
     int64 todoID = 1;
-    string name = 2;
+    string todoName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
@@ -74,7 +74,7 @@ message CreateTaskRequest {
 }
 message CreateTaskResponse {
     int64 taskID = 1;
-    string name = 2;
+    string taskName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
@@ -103,7 +103,7 @@ message UpdateTaskRequest {
 }
 message UpdateTaskResponse {
     int64 taskID = 1;
-    string name = 2;
+    string taskName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
@@ -116,7 +116,7 @@ message DeleteTaskRequest {
 }
 message DeleteTaskResponse {
     int64 taskID = 1;
-    string name = 2;
+    string taskName = 2;
     int32 status = 3;
     btodo.utils.Timestamp createdAt = 4;
     btodo.utils.Timestamp updatedAt = 5;
